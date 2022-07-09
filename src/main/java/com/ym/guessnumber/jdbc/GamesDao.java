@@ -1,11 +1,13 @@
 package com.ym.guessnumber.jdbc;
 
-import com.ym.guessnumber.repository.Games;
+import com.ym.guessnumber.repository.Game;
 
 import java.util.List;
 
 public  interface GamesDao {
-    List<Games> getAll();
+    List<Game> getAll();
 
-    Games findById(int id);
+    Game findById(int id);
+
+    void addGame(Game game);
 }

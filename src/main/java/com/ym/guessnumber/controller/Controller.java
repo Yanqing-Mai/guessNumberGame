@@ -4,6 +4,7 @@ import com.ym.guessnumber.reqandres.BeginResponse;
 import com.ym.guessnumber.reqandres.GuessRequest;
 import com.ym.guessnumber.reqandres.GuessResponse;
 import com.ym.guessnumber.service.GuessRoundService;
+import com.ym.guessnumber.service.StartGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -14,9 +15,12 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/api")
 public class Controller {
-
     @Autowired
     GuessRoundService guessRoundService;
+
+
+    @Autowired
+    StartGameService startGameService;
 
     @GetMapping
     public String[] helloWorld(){
@@ -26,7 +30,9 @@ public class Controller {
 
     @PostMapping("/begin")
     public ResponseEntity<BeginResponse> startGame(){
-        BeginResponse response = new BeginResponse();
+        BeginResponse response =  startGameService.generatedMessage();
+
+
         return ResponseEntity.ok(response);
     }
 
