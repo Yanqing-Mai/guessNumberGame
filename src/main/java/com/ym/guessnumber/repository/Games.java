@@ -1,6 +1,13 @@
 package com.ym.guessnumber.repository;
 
-public interface Games {
+import lombok.Data;
 
+import java.util.List;
+
+@Data
+public class Games {
+    private int id;
+    private int answer;
+    private boolean finished;
 
 }
