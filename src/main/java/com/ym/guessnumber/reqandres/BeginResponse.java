@@ -1,9 +1,10 @@
 package com.ym.guessnumber.reqandres;
 
+import com.ym.guessnumber.repository.Game;
 import lombok.Data;
 
 @Data
 public class BeginResponse {
-    String message;
-    int id;
+    private String message;
+    Game game;
 }
